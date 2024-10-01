@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="index.css">
+  <title>Chemical Supplies</title>
+</head>
+<body>
+  <div class="wrapper">
+      
+    <div class="bg-shadow display-none"></div>
+
+    <header class="header">
+      <div class="heading">
+        <h1>
+          Chemical Supplies
+        </h1>
+      </div>
+      <div class="crud-buttons-group">
+        <button id="add-row">Add Row</button>
+        <button id="edit-row">Edit Row</button>
+        <button id="delete-row">Delete Row</button>
+      </div>
+      <div class="function-buttons-group">
+        <img src="/assets/light-mode-toggle-icon.svg" alt="theme-toggler" id="theme-toggle-svg" class="toggler-svg basic-transition">
+        <img src="/assets/save-icon.svg" alt="save-icon" id="save-icon-svg" class="save-svg basic-transition">
+      </div>
+    </header>
+
+   <main class="main-container">
+    <div id="edit-modal" class="display-none position-absolute">
+      <!-- <form class="edit-row-form">
+        <div>
+          <label>Serial No.</label>
+          <input type="text" disabled>
+        </div>
+        <div>
+          <label>Id:</label>
+          <input type="text" disabled>
+        </div>
+        <div>
+          <label>Chemical Name:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Vendor:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Density:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Viscosity:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Packaging:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Pack Size:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Unit:</label>
+          <input type="text">
+        </div>
+        <div>
+          <label>Quantity:</label>
+          <input type="text">
+        </div>
+      </form> -->
+    </div>
+    <div >
+      <table>
+      <thead>
+        <th class="select-all"><input type="checkbox" id="select-all-checkboxes">Select</th>
+        <th>Serial No.</th>
+        <th>Id</th>
+        <th>Chemical Name</th>
+        <th>Vendor</th>
+        <th>Density</th>
+        <th>Viscosity</th>
+        <th>Packaging</th>
+        <th>Pack Size</th>
+        <th>Unit</th>
+        <th>Quantity</th>
+      </thead>
+      <tbody id="table"></tbody>
+    </table>
+    </div>
+    
+    
+   </main>
+
+  </div>
+</body>
+
+<script type="module" src="index.js"></script>
+</html>
