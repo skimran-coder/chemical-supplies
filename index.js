@@ -50,7 +50,7 @@ function renderTable() {
   chemicals.length > 0 &&
     chemicals.map((item, index) => {
       const row = `
-  <tr id="row_${item.id}">
+  <tr id="row_${item.id}" class="table-row">
    <td class="checkbox-td"><input type="checkbox" class="checkboxes" id="${
      item.id
    }" name="${item.chemicalName}" value="${item.id}"></td>
@@ -88,6 +88,7 @@ function addRow() {
   chemicals.push(newRow);
   renderTable();
   saveChemicalsToLocalStorage(chemicals);
+  showSnackbarMsg("Row Added Successfully!");
 }
 
 document.getElementById("add-row").addEventListener("click", addRow);
@@ -99,7 +100,7 @@ function deleteRow(e) {
   const checkedBox = checkboxes.filter((checkbox) => checkbox.checked);
 
   if (!checkedBox.length > 0) {
-    console.log("early return");
+    showSnackbarMsg("⚠️ Select atleast one row!");
     return;
   }
 
@@ -118,6 +119,7 @@ function deleteRow(e) {
 
   renderTable();
   saveChemicalsToLocalStorage(chemicals);
+  showSnackbarMsg("Row(s) Deleted Successfully!");
 }
 
 document.getElementById("delete-row").addEventListener("click", deleteRow);
@@ -140,7 +142,7 @@ function openModal() {
   const checkedBox = checkboxes.filter((checkbox) => checkbox.checked);
 
   if (!checkedBox.length > 0) {
-    console.log("early return");
+    showSnackbarMsg("⚠️ Select atleast one row!");
     return;
   }
 
@@ -257,6 +259,7 @@ function saveRowEdit(e, id, filteredData) {
   saveChemicalsToLocalStorage(chemicals);
   renderTable();
   closeModal();
+  showSnackbarMsg("Row Updated Successfully!");
 }
 
 function closeModal() {
@@ -303,3 +306,13 @@ dataTableCells.forEach((cell) => {
   });
   cell.addEventListener("blur", (e) => doneEdit(e));
 });
+
+function showSnackbarMsg(message) {
+  var snackbar = document.getElementById("snackbar");
+  snackbar.innerText = message;
+  snackbar.className = "show";
+
+  setTimeout(function () {
+    snackbar.className = snackbar.className.replace("show", "");
+  }, 3000);
+}
