@@ -18,12 +18,12 @@ themeTogglerSvg.addEventListener("click", () => {
 function checkIsDarkMode() {
   if (body[0].classList.contains("dark-mode")) {
     localStorage.setItem("dark-mode", true);
-    themeTogglerSvg.setAttribute("src", "/assets/dark-mode-toggle-icon.svg");
-    saveIconSvg.setAttribute("src", "/assets/save-icon-dark.svg");
+    themeTogglerSvg.setAttribute("src", "assets/dark-mode-toggle-icon.svg");
+    saveIconSvg.setAttribute("src", "assets/save-icon-dark.svg");
   } else {
     localStorage.removeItem("dark-mode");
-    themeTogglerSvg.setAttribute("src", "/assets/light-mode-toggle-icon.svg");
-    saveIconSvg.setAttribute("src", "/assets/save-icon.svg");
+    themeTogglerSvg.setAttribute("src", "assets/light-mode-toggle-icon.svg");
+    saveIconSvg.setAttribute("src", "assets/save-icon.svg");
   }
 }
 
@@ -219,9 +219,10 @@ function openModal() {
       </form>`;
 
     editModalDiv.innerHTML = form;
-    
 
-    document.getElementById("edit-row-form").addEventListener("submit", (e) => e.preventDefault())
+    document
+      .getElementById("edit-row-form")
+      .addEventListener("submit", (e) => e.preventDefault());
   }
 
   renderModal();
@@ -255,7 +256,7 @@ function saveRowEdit(e, id, filteredData) {
   }
   saveChemicalsToLocalStorage(chemicals);
   renderTable();
-  closeModal()
+  closeModal();
 }
 
 function closeModal() {
