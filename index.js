@@ -9,15 +9,24 @@ import {
   openModal,
   inlineEdit,
   doneEdit,
+  showSnackbarMsg,
 } from "./utils/helpers.js";
 import deleteRow from "./utils/deleteRow.js";
+import downloadCSV from "./utils/downloadFile.js";
+import moveRowUp from "./utils/moveRowUp.js";
+import moveRowDown from "./utils/moveRowDown.js";
+import resetData from "./utils/resetData.js";
 
 const body = document.getElementsByTagName("body");
 const themeTogglerSvg = document.getElementById("theme-toggle-svg");
+const resetIconSvg = document.getElementById("reset-icon-svg");
+const saveIconSvg = document.getElementById("save-icon-svg");
 const addRowBtn = document.getElementById("add-row");
 const deleteRowBtn = document.getElementById("delete-row");
 const editRowBtn = document.getElementById("edit-row");
 const selectAllCheckBox = document.getElementById("select-all-checkboxes");
+const moveRowUpIcon = document.getElementById("move-row-up-icon");
+const moveRowDownIcon = document.getElementById("move-row-down-icon");
 
 if (localStorage.getItem("dark-mode")) {
   body[0].classList.add("dark-mode");
@@ -37,6 +46,8 @@ if (!loadChemicalsFromLocalStorage()) {
 }
 
 renderTable(chemicals);
+
+resetIconSvg.addEventListener("click", resetData);
 
 addRowBtn.addEventListener("click", addTableRow);
 
@@ -66,3 +77,8 @@ dataTableCells.forEach((cell) => {
   });
   cell.addEventListener("blur", (e) => doneEdit(e));
 });
+
+moveRowUpIcon.addEventListener("click", moveRowUp);
+moveRowDownIcon.addEventListener("click", moveRowDown);
+
+saveIconSvg.addEventListener("click", downloadCSV);

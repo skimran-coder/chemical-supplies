@@ -55,6 +55,21 @@ body {
   padding: 0 2rem;
 }
 
+.crud-buttons-group div {
+  display: flex;
+  gap: 1rem;
+}
+
+.crud-buttons-group div i {
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.crud-buttons-group div i:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
 button {
   padding: 0.5rem 1rem;
   background-color: #fff;
@@ -84,16 +99,20 @@ button:focus {
   color: #fff;
 }
 
-.toggler-svg {
-  cursor: pointer;
-  height: 2.5rem;
-  width: 2.5rem;
-}
-
+.add-row-svg,
+.edit-row-svg,
+.delete-row-svg,
+.reset-svg,
 .save-svg {
   cursor: pointer;
   height: 2rem;
   width: 2rem;
+}
+
+.toggler-svg {
+  cursor: pointer;
+  height: 2.5rem;
+  width: 2.5rem;
 }
 
 .toggler-svg:hover,
@@ -193,9 +212,8 @@ input[type="checkbox"] {
   gap: 0.5rem;
 }
 
-
 #edit-modal {
-  position: fixed; 
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -279,7 +297,6 @@ body.modal-open {
   margin-top: 2.5rem;
 }
 
-
 .edit-row-form-btn-div button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -315,7 +332,7 @@ body.modal-open {
   transform: scale(1.05);
 }
 
-.dark-mode .edit-done-btn{
+.dark-mode .edit-done-btn {
   background-color: #0056b3;
   color: #fff;
   font-weight: bold;
@@ -381,7 +398,6 @@ body.modal-open {
   }
 }
 
-
 /* Responsive: Ensure buttons stack on smaller screens */
 @media (max-width: 600px) {
   .edit-row-form-btn-div {
@@ -395,13 +411,11 @@ body.modal-open {
   }
 }
 
-
 .basic-transition {
   transition-duration: 300ms;
   transition-property: all;
   transition-timing-function: ease-in-out;
 }
-
 
 /* The snackbar - position it at the bottom and in the middle of the screen */
 #snackbar {
@@ -430,21 +444,45 @@ body.modal-open {
 
 /* Animations to fade the snackbar in and out */
 @-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }
 
 @keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

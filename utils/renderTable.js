@@ -12,9 +12,11 @@ function renderTable(chemicals) {
   function generateTable(item, index) {
     return `
     <tr id="row_${item.id}" class="table-row">
-     <td class="checkbox-td"><input type="checkbox" class="checkboxes" id="${
-       item.id
-     }" name="${item.chemicalName}" value="${item.id}"></td>
+     <td class="checkbox-td">
+     <input type="checkbox" class="checkboxes" id="${item.id}" name="${
+      item.chemicalName
+    }" value="${item.id}">
+     </td>
     <td>${index + 1}</td>
     <td>${item.id.slice(-6)}</td>
     <td id="name_${item.id}">${item.chemicalName}</td>

@@ -11,11 +11,9 @@ export function checkIsDarkMode() {
   if (body[0].classList.contains("dark-mode")) {
     localStorage.setItem("dark-mode", true);
     themeTogglerSvg.setAttribute("src", "assets/dark-mode-toggle-icon.svg");
-    saveIconSvg.setAttribute("src", "assets/save-icon-dark.svg");
   } else {
     localStorage.removeItem("dark-mode");
     themeTogglerSvg.setAttribute("src", "assets/light-mode-toggle-icon.svg");
-    saveIconSvg.setAttribute("src", "assets/save-icon.svg");
   }
 }
 
@@ -168,7 +166,12 @@ export function openModal() {
   const editModalDiv = document.getElementById("edit-modal");
 
   if (!checkedBox.length > 0) {
-    showSnackbarMsg("⚠️ Select atleast one row!");
+    showSnackbarMsg("⚠️ Select a row!");
+    return;
+  }
+
+  if (checkedBox.length > 1) {
+    showSnackbarMsg("⚠️ Select only one row at a time!");
     return;
   }
 
@@ -205,3 +208,5 @@ export function doneEdit(e) {
     }
   });
 }
+
+
