@@ -1,42 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="index.css">
-  <title>Chemical Supplies</title>
-</head>
-<body>
-  <div class="wrapper">
-      
-    <div class="bg-shadow display-none"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <title>Chemical Supplies</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="bg-shadow display-none"></div>
 
-    <header class="header">
-      <div class="heading">
-        <h1>
-          Chemical Supplies
-        </h1>
-      </div>
-      <div class="crud-buttons-group">
-        <img src="assets/plus-round-icon.svg" id="add-row" class="add-row-svg">
-        <img src="assets/edit-round-line-icon.svg" id="edit-row" class="edit-row-svg">
-        <img src="assets/recycle-bin-line-icon.svg" id="delete-row" class="delete-row-svg">
-        <div>
-          <i class="fa-solid fa-arrow-up-long" id="move-row-up-icon"></i>
-          <i class="fa-solid fa-arrow-down-long" id="move-row-down-icon"></i>
+      <header class="header">
+        <div class="heading">
+          <h1>Chemical Supplies</h1>
         </div>
-      </div>
-      <div class="function-buttons-group">
-        <img src="assets/light-mode-toggle-icon.svg" alt="theme-toggler" id="theme-toggle-svg" class="toggler-svg basic-transition">
-        <img src="assets/reset-update-icon.svg" alt="reset-icon" id="reset-icon-svg" class="reset-svg basic-transition">
-        <img src="assets/download-csv-icon.svg" alt="save-icon" id="save-icon-svg" class="save-svg basic-transition">
-      </div>
-    </header>
+        <div class="crud-buttons-group">
+          <img
+            src="assets/plus-round-icon.svg"
+            id="add-row"
+            class="add-row-svg"
+          />
+          <img
+            src="assets/edit-round-line-icon.svg"
+            id="edit-row"
+            class="edit-row-svg"
+          />
+          <img
+            src="assets/recycle-bin-line-icon.svg"
+            id="delete-row"
+            class="delete-row-svg"
+          />
+          <div>
+            <i class="fa-solid fa-arrow-up-long" id="move-row-up-icon"></i>
+            <i class="fa-solid fa-arrow-down-long" id="move-row-down-icon"></i>
+          </div>
+        </div>
+        <div class="function-buttons-group">
+          <img
+            src="assets/light-mode-toggle-icon.svg"
+            alt="theme-toggler"
+            id="theme-toggle-svg"
+            class="toggler-svg basic-transition"
+          />
+          <img
+            src="assets/reset-update-icon.svg"
+            alt="reset-icon"
+            id="reset-icon-svg"
+            class="reset-svg basic-transition"
+          />
+          <img
+            src="assets/download-csv-icon.svg"
+            alt="save-icon"
+            id="save-icon-svg"
+            class="save-svg basic-transition"
+          />
+        </div>
+      </header>
 
-   <main class="main-container">
-    <div id="edit-modal" class="display-none position-absolute">
-      <!-- <form class="edit-row-form">
+      <main class="main-container">
+        <div id="edit-modal" class="display-none position-absolute">
+          <!-- <form class="edit-row-form">
         <div>
           <label>Serial No.</label>
           <input type="text" disabled>
@@ -78,31 +105,31 @@
           <input type="text">
         </div>
       </form> -->
+        </div>
+        <div>
+          <table>
+            <thead>
+              <th class="select-all">
+                <input type="checkbox" id="select-all-checkboxes" />Select
+              </th>
+              <th id="serialNo">Serial No.</th>
+              <th id="id">Id</th>
+              <th id="chemicalName">Chemical Name</th>
+              <th id="vendor">Vendor</th>
+              <th id="density">Density</th>
+              <th id="viscosity">Viscosity</th>
+              <th id="packaging">Packaging</th>
+              <th id="packSize">Pack Size</th>
+              <th id="unit">Unit</th>
+              <th id="quantity">Quantity</th>
+            </thead>
+            <tbody id="table"></tbody>
+          </table>
+        </div>
+      </main>
+      <div id="snackbar"></div>
     </div>
-    <div >
-      <table>
-      <thead>
-        <th class="select-all"><input type="checkbox" id="select-all-checkboxes">Select</th>
-        <th>Serial No.</th>
-        <th>Id</th>
-        <th>Chemical Name</th>
-        <th>Vendor</th>
-        <th>Density</th>
-        <th>Viscosity</th>
-        <th>Packaging</th>
-        <th>Pack Size</th>
-        <th>Unit</th>
-        <th>Quantity</th>
-      </thead>
-      <tbody id="table"></tbody>
-    </table>
-    </div>
-    
-    
-   </main>
-   <div id="snackbar"></div>
-  </div>
-</body>
+  </body>
 
-<script type="module" src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </html>

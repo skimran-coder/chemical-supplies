@@ -115,8 +115,12 @@ button:focus {
   width: 2.5rem;
 }
 
+.add-row-svg:hover,
+.edit-row-svg:hover,
+.delete-row-svg:hover,
 .toggler-svg:hover,
-.save-svg:hover {
+.save-svg:hover,
+.reset-svg:hover {
   transform: scale(1.1);
   transition: 0.3s;
 }
@@ -162,6 +166,16 @@ thead {
 thead th {
   padding: 0.75rem;
   text-align: left;
+}
+
+.th-flex {
+  display: flex;
+  align-items: center; /* Aligns the text and icon vertically */
+  justify-content: space-between; /* Optional: space between text and icon */
+}
+
+.th-flex i {
+  margin-left: 5px; /* Adds some space between the text and icon */
 }
 
 tbody tr {

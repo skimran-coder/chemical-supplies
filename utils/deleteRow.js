@@ -35,7 +35,6 @@ function deleteRow(e) {
   renderTable(chemicals);
   saveChemicalsToLocalStorage(chemicals);
   showSnackbarMsg("Row(s) Deleted Successfully!");
-  console.log(chemicals)
 }
 
 export default deleteRow;

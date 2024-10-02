@@ -9,13 +9,13 @@ import {
   openModal,
   inlineEdit,
   doneEdit,
-  showSnackbarMsg,
 } from "./utils/helpers.js";
 import deleteRow from "./utils/deleteRow.js";
 import downloadCSV from "./utils/downloadFile.js";
 import moveRowUp from "./utils/moveRowUp.js";
 import moveRowDown from "./utils/moveRowDown.js";
 import resetData from "./utils/resetData.js";
+import sortColumn from "./utils/sortColumn.js";
 
 const body = document.getElementsByTagName("body");
 const themeTogglerSvg = document.getElementById("theme-toggle-svg");
@@ -82,3 +82,13 @@ moveRowUpIcon.addEventListener("click", moveRowUp);
 moveRowDownIcon.addEventListener("click", moveRowDown);
 
 saveIconSvg.addEventListener("click", downloadCSV);
+
+
+
+const tableHead = Array.from(document.getElementsByTagName("th"));
+tableHead.shift();
+tableHead.shift();
+
+tableHead.forEach((head) => {
+  head.addEventListener("click", (e) => sortColumn(e));
+});
